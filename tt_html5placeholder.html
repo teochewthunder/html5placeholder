@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>HTML5 Placeholder</title>
+
+        <style>
+        .notext {color:#999999;}
+        .textentered {color:#000000;}
+        </style>
+
+        <script>
+        function tt_placeholder(varfocus)
+        {
+            var searchbox=document.getElementById("txtSearch");
+
+            if (varfocus==1)
+            {
+                if (searchbox.className=="notext")
+                {
+                    searchbox.value="";
+                    searchbox.className="textentered";
+                }
+            }
+            else
+            {
+                if (searchbox.value=="")
+                {
+                    searchbox.value="search";
+                    searchbox.className="notext";
+                }
+            }
+        }
+        </script>
+    </head>
+
+    <body>
+        <input id="txtSearch" maxlength="50" class="notext" value="search" onfocus="tt_placeholder(1);" onblur="tt_placeholder(0);" >
+        <input type="button" value="Go" >
+    </body>
+</html> 
